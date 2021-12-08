@@ -4,19 +4,19 @@ import './Sidebar.modules.css';
 const Sidebar = () => {
   return (
     <div className="nav">
-      <div>
+      <div className="item">
         <NavLink to="/profile">Profile</NavLink>
       </div>
-      <div>
+      <div className="item"> 
         <NavLink to="/dialogs">Messages</NavLink>
       </div>
-      <div>
+      <div className="item">
         <NavLink to="/news">News</NavLink>
       </div>
-      <div>
+      <div className="item">
         <NavLink to="/music">Music</NavLink>
       </div>
-      <div>
+      <div className="item">
         <NavLink to="/settings">Settings</NavLink>
       </div>
     </div>
