@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
 import SidebarItem from './SidebarItem/SidebarItem'
+import InterestingPlaces from './InterestingPlaces/InterestingPlaces'
 import './Sidebar.modules.css';
 const Sidebar = (props) => {
   return (
@@ -25,6 +26,12 @@ const Sidebar = (props) => {
       </div>
       <div>
       {props.state.friend.map(friend => <SidebarItem name={friend.name} id={friend.id}/>)}
+      </div>
+      <div>
+        <div className="namePlace">
+        Interesting Places
+        </div>
+        {props.state.channel.map(channel => <InterestingPlaces name={channel.name}src={channel.src}/>)}
       </div>
     </div>
   );
