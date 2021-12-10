@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom'
-import DialogItem from '../Dialogs/DialogItem/DialogItem'
+import SidebarItem from './SidebarItem/SidebarItem'
 import './Sidebar.modules.css';
 const Sidebar = (props) => {
   return (
@@ -24,7 +24,7 @@ const Sidebar = (props) => {
         My Friends
       </div>
       <div>
-      {props.state.friend.map(friend => <DialogItem name={friend.name} id={friend.id}/>)}
+      {props.state.friend.map(friend => <SidebarItem name={friend.name} id={friend.id}/>)}
       </div>
     </div>
   );

@@ -17,8 +17,8 @@ function App(props) {
         <Sidebar state={props.state.sidebarPage}/>
         <div className="content">
           <Routes>
-            <Route path="/"element={ <Profile /> }/>
-            <Route path="/profile" element={ <Profile /> } />
+            <Route path="/"element={ <Profile state={props.state.profilePage}/> }/>
+            <Route path="/profile" element={ <Profile state={props.state.profilePage}/> } />
             <Route path="/dialogs" element={ <Dialogs state={ props.state.messagePage } /> } />
             <Route path="/dialogs/1"element={ <Dialogs state={ props.state.messagePage }/> } />
             <Route path="/dialogs/2"element={ <Dialogs state={ props.state.messagePage }/> } />

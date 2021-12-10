@@ -8,7 +8,8 @@ const Post = (props) => {
         src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1"
         alt="foto"
       />
-     {props.message}
+      {props.message}
+      <div>like {props.like}</div>
     </div>
   );
 };

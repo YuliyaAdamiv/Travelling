@@ -1,4 +1,12 @@
 let state = {
+  profilePage: {
+    posts: [
+      {message: 'Hi, how are you?', like:'15'},
+      {message: 'Hello', like:'20'},
+      {message: 'Where do you live?', like:'11'},
+      {message: 'Yo! Yo! Yo!', like:'150'}
+  ],
+},
   messagePage: {
     dialog: [
       {id: 1, name: 'Dimych'},

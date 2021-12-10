@@ -1,14 +1,10 @@
 import React from 'react';
 import Post from './Post/Post';
-import Like from './Post/Like/Like'
-const MyPosts = () => {
+const MyPosts = (props) => {
   return (
     <div>
       My Posts
-      <Post message="Hi, how are you?"/>
-      <Like value="15"/>
-      <Post message="Hello!"/>
-      <Like value="20"/>
+      {props.state.posts.map(posts => <Post message={posts.message} like={posts.like}/>)}
     </div>
   );
 };
