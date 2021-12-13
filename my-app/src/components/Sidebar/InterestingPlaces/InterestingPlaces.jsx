@@ -1,10 +1,9 @@
 import React from 'react';
-import './InterestingPlaces.modules.css'
+import './InterestingPlaces.module.css';
 
 const SidebarItems = (props) => {
-  console.log(props);
   return (
-    <div >
+    <div>
       <img className="interestingPlaces" src={props.src} alt={props.name}></img>
     </div>
   );

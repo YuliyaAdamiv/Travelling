@@ -1,12 +1,13 @@
+import {rerenderEntireTree} from '../render';
 let state = {
   profilePage: {
     posts: [
-      {message: 'Hi, how are you?', like:'15'},
-      {message: 'Hello', like:'20'},
-      {message: 'Where do you live?', like:'11'},
-      {message: 'Yo! Yo! Yo!', like:'150'}
-  ],
-},
+      {message: 'Hi, how are you?', like: '15'},
+      {message: 'Hello', like: '20'},
+      {message: 'Where do you live?', like: '11'},
+      {message: 'Yo! Yo! Yo!', like: '150'},
+    ],
+  },
   messagePage: {
     dialog: [
       {id: 1, name: 'Dimych'},
@@ -32,10 +33,32 @@ let state = {
       {id: 3, name: 'Sasha'},
     ],
     channel: [
-      { name:'Relaxing', src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh0-2Vro_50sC5LwLG2cqqEFQOUGj11f9RaA&usqp=CAU'},
-      { name:'Travelling', src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUlDa7v2UlsDcBHBuzEzDwtQxrz3PA6DqeFw&usqp=CAU'},
-      { name:'Route', src:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFWLzxfuVQtvQZfE9s8OYOqMCHjUxNJujyg&usqp=CAU'}
-    ]
+      {
+        name: 'Relaxing',
+        src:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh0-2Vro_50sC5LwLG2cqqEFQOUGj11f9RaA&usqp=CAU',
+      },
+      {
+        name: 'Travelling',
+        src:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUlDa7v2UlsDcBHBuzEzDwtQxrz3PA6DqeFw&usqp=CAU',
+      },
+      {
+        name: 'Route',
+        src:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFWLzxfuVQtvQZfE9s8OYOqMCHjUxNJujyg&usqp=CAU',
+      },
+    ],
   },
+};
+
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 5,
+    message: postMessage,
+    like: 7,
+  };
+  state.profilePage.posts.push(newPost);
+  rerenderEntireTree(state);
 };
 export default state;

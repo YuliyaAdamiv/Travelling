@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import './SiderbarItem.modules.css'
+import './SiderbarItem.modules.css';
 const SidebarItems = (props) => {
   return (
     <div className="sidebar-container">
