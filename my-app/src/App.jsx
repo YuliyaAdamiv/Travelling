@@ -41,28 +41,15 @@ function App(props) {
               element={<Dialogs state={props.state.messagePage} />}
             />
             <Route
-              path="/dialogs/1"
+              path="/dialogs/:id"
               element={<Dialogs state={props.state.messagePage} />}
-            />
-            <Route
-              path="/dialogs/2"
-              element={<Dialogs state={props.state.messagePage} />}
-            />
-            <Route
-              path="/dialogs/3"
-              element={<Dialogs state={props.state.messagePage} />}
-            />
-            <Route
-              path="/dialogs/4"
-              element={<Dialogs state={props.state.messagePage} />}
-            />
-            <Route
-              path="/dialogs/5"
-              element={<Dialogs state={props.state.messagePage} />}
-            />
-            <Route
-              path="/dialogs/6"
-              element={<Dialogs state={props.state.messagePage} />}
+              render={({match}) => (
+                <Dialogs
+                  state={props.state.messagePage.find(
+                    (p) => p.id === match.params.id
+                  )}
+                />
+              )}
             />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
