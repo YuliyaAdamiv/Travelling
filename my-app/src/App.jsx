@@ -37,13 +37,16 @@ function App(props) {
             />
             <Route
               path="/dialogs"
-              element={<Dialogs state={props.state.messagePage} />}
+              element={
+                <Dialogs state={props.state.messagePage} store={props.store} />
+              }
             />
             <Route
               path="/dialogs/:id"
               element={<Dialogs state={props.state.messagePage} />}
               render={({match}) => (
                 <Dialogs
+                  store={props.store}
                   state={props.state.messagePage.find(
                     (p) => p.id === match.params.id
                   )}
