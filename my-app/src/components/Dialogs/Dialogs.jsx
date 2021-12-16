@@ -5,9 +5,8 @@ import './Dialogs.modules.css';
 import {
   updateNewMessageBodyCreator,
   sendMessageCreator,
-} from '../../redux/state';
+} from '../../redux/dialogsReducer';
 const Dialogs = (props) => {
-  // let state = props.store.getState().dialogsPage;
   let newMessageBody = props.state.newMessageBody;
   let onNewMessageChange = (e) => {
     let body = e.target.value;

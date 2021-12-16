@@ -20,19 +20,13 @@ function App(props) {
             <Route
               path="/"
               element={
-                <Profile
-                  state={props.state.profilePage}
-                  dispatch={props.dispatch}
-                />
+                <Profile state={props.state.profilePage} store={props.store} />
               }
             />
             <Route
               path="/profile"
               element={
-                <Profile
-                  state={props.state.profilePage}
-                  dispatch={props.dispatch}
-                />
+                <Profile state={props.state.profilePage} store={props.store} />
               }
             />
             <Route
@@ -43,10 +37,11 @@ function App(props) {
             />
             <Route
               path="/dialogs/:id"
-              element={<Dialogs state={props.state.messagePage} />}
+              element={
+                <Dialogs store={props.store} state={props.state.messagePage} />
+              }
               render={({match}) => (
                 <Dialogs
-                  store={props.store}
                   state={props.state.messagePage.find(
                     (p) => p.id === match.params.id
                   )}
