@@ -8,6 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
   return (
@@ -32,13 +33,19 @@ function App(props) {
             <Route
               path="/dialogs"
               element={
-                <Dialogs state={props.state.messagePage} store={props.store} />
+                <DialogsContainer
+                  state={props.state.messagePage}
+                  store={props.store}
+                />
               }
             />
             <Route
               path="/dialogs/:id"
               element={
-                <Dialogs store={props.store} state={props.state.messagePage} />
+                <DialogsContainer
+                  store={props.store}
+                  state={props.state.messagePage}
+                />
               }
               render={({match}) => (
                 <Dialogs
