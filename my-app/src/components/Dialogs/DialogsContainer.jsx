@@ -5,20 +5,27 @@ import {
   sendMessageCreator,
 } from '../../redux/dialogsReducer';
 import Dialogs from './Dialogs';
+import StoreContext from '../../redux/storeContext';
 const DialogsContainer = (props) => {
-  let onNewMessageChange = (body) => {
-    props.store.dispatch(updateNewMessageBodyCreator(body));
-  };
-  let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
-  };
   return (
-    <Dialogs
-      updateNewMessage={onNewMessageChange}
-      sendMessage={onSendMessageClick}
-      dialogs={props.store}
-      state={props.state}
-    />
+    <StoreContext.Consumer>
+      {(store) => {
+        let onNewMessageChange = (body) => {
+          store.dispatch(updateNewMessageBodyCreator(body));
+        };
+        let onSendMessageClick = () => {
+          store.dispatch(sendMessageCreator());
+        };
+        return (
+          <Dialogs
+            updateNewMessage={onNewMessageChange}
+            sendMessage={onSendMessageClick}
+            dialogs={props.store}
+            state={props.state}
+          />
+        );
+      }}
+    </StoreContext.Consumer>
   );
 };
 export default DialogsContainer;

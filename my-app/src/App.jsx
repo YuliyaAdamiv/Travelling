@@ -18,24 +18,14 @@ function App(props) {
         <Sidebar state={props.state.sidebarPage} />
         <div className="content">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Profile state={props.state.profilePage} store={props.store} />
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <Profile state={props.state.profilePage} store={props.store} />
-              }
-            />
+            <Route path="/" element={<Profile />} />
+            <Route path="/profile" element={<Profile />} />
             <Route
               path="/dialogs"
               element={
                 <DialogsContainer
-                  state={props.state.messagePage}
                   store={props.store}
+                  state={props.state.messagePage}
                 />
               }
             />
